@@ -1,0 +1,143 @@
+﻿@page
+@model WebApplicationTest.Pages.ContactModel
+@{
+    ViewData["Title"] = "Sakura Viewing Information";
+    ViewData["HideNavbar"] = true;
+    ViewData["HideFooter"] = true;
+}
+
+<div class="sakura-contact-simple">
+    <div class="sakura-contact-header">
+        <h1>桜の見物情報</h1>
+        <h2>Sakura Viewing Information</h2>
+    </div>
+
+    <div class="sakura-contact-grid">
+        <div class="contact-card">
+            <div class="card-icon">📞</div>
+            <h3>Contact Us</h3>
+            <p><strong>Phone:</strong> 0000000</p>
+            <p><strong>Email:</strong> iamlaoshi@sakura.com</p>
+            <p><strong>Office Hours:</strong> 9:00-17:00 (JST)</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="card-icon">🗓️</div>
+            <h3>Best Viewing Times</h3>
+            <p><strong>Tokyo Area:</strong> Late March - Early April</p>
+            <p><strong>Kyoto Area:</strong> Early - Mid April</p>
+            <p><strong>Northern Japan:</strong> Late April - Early May</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="card-icon">📍</div>
+            <h3>Top Locations</h3>
+            <p>• Shinjuku Gyoen (Tokyo)</p>
+            <p>• Philosopher's Path (Kyoto)</p>
+            <p>• Hirosaki Castle (Aomori)</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="card-icon">⏳</div>
+            <h3>Viewing Tips</h3>
+            <p>• Early morning for fewer crowds</p>
+            <p>• Weekdays are less busy</p>
+            <p>• Check bloom forecasts weekly</p>
+        </div>
+
+        <div class="sakura-back-home">
+            <a href="/Home" class="btn btn-sakura">Back to Home</a>
+        </div>
+
+    </div>
+</div>
+
+<style>
+
+    .sakura-back-home {
+        text-align: center;
+        margin-top: auto;
+        padding: 2rem 0;
+    }
+
+    .btn-sakura {
+        background: #d23369;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+    }
+
+        .btn-sakura:hover {
+            background: #b52a5a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(210, 51, 105, 0.3);
+        }
+    .sakura-contact-simple {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        min-height: calc(100vh - 56px);
+    }
+
+    .sakura-contact-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 1rem;
+    }
+
+        .sakura-contact-header h1 {
+            font-size: 3rem;
+            color: #d23369;
+            margin-bottom: 0.5rem;
+        }
+
+        .sakura-contact-header h2 {
+            font-size: 1.5rem;
+            color: #5d5d5d;
+            font-weight: 400;
+        }
+
+    .sakura-contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .contact-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+    }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .card-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-card h3 {
+        color: #d23369;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .contact-card p {
+        color: #666;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+    }
+
+    @@media (max-width: 768px) {
+        .sakura-contact-header h1 {
+            font-size: 2.2rem;
+        }
+    }
+</style>

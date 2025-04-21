@@ -1,0 +1,84 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+   
+    ViewData["HideNavbar"] = true; 
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Playfair Display', serif;
+            background-image: url('/css/ocherry.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hello-container {
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .start-btn {
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: black
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .start-btn:hover {
+                background-color: darkgrey;
+            }
+    </style>
+</head>
+<body>
+    <div class="hello-container">
+        <h1>Hello, Welcome!</h1>
+        <p>Name: 劉佩芬 | Student Number: 111110541</p>
+        <p>Login Id: laoshi | Password: iamlaoshi</p>
+        <p>Login Page Link: </p>
+        <form method="get" action="/Login">
+            <button class="start-btn" type="submit">Let's Go!</button>
+        </form>
+    </div>
+</body>
+</html>

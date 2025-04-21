@@ -1,0 +1,233 @@
+﻿@page
+@model WebApplicationTest.Pages.HomeModel
+@{
+    ViewData["HideNavbar"] = true;
+    ViewData["HideFooter"] = true;
+}
+
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Beauty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .sakura-container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .sakura-left {
+            flex: 1;
+            background: #fff9fb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .sakura-content {
+            max-width: 500px;
+        }
+
+            .sakura-content h1 {
+                font-size: 4rem; /* Increased from 3.5rem */
+                color: #d23369;
+                margin-bottom: 0.5rem;
+                font-weight: 700;
+            }
+
+            .sakura-content h2 {
+                font-size: 2.5rem; /* Increased from 2rem */
+                color: #5d5d5d;
+                margin-bottom: 1.5rem;
+                font-weight: 400;
+            }
+
+            .sakura-content p {
+                color: #777;
+                line-height: 1.6;
+                margin-bottom: 2rem;
+                font-size: 1.2rem; /* Added larger font size */
+            }
+
+        .sakura-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-sakura {
+            background: #d23369;
+            color: white;
+            padding: 15px 30px; /* Increased padding */
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem; /* Increased font size */
+            font-weight: 500;
+        }
+
+            .btn-sakura:hover {
+                background: #b52a5a;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+        .btn-outline-sakura {
+            border: 2px solid #d23369;
+            color: #d23369;
+            padding: 13px 30px; /* Increased padding */
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s;
+            background: transparent;
+            cursor: pointer;
+            font-size: 1.2rem; /* Increased font size */
+            font-weight: 500;
+        }
+
+            .btn-outline-sakura:hover {
+                background: #fce4ec;
+            }
+
+        .btn-logout {
+            background: #333;
+            color: white;
+            padding: 13px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+            .btn-logout:hover {
+                background: #222;
+                transform: translateY(-2px);
+            }
+
+        .sakura-right {
+            flex: 1;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sakura-blossom {
+            position: absolute;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ffffff" d="M50 0c-5 15-15 25-30 30 15 5 25 15 30 30 5-15 15-25 30-30-15-5-25-15-30-30z"/></svg>');
+            background-size: contain;
+            width: 80px;
+            height: 80px;
+            opacity: 0.8;
+            animation: float 15s infinite linear;
+        }
+
+            .sakura-blossom:nth-child(1) {
+                top: 20%;
+                left: 10%;
+                width: 60px;
+                height: 60px;
+                animation-delay: 0s;
+            }
+
+            .sakura-blossom:nth-child(2) {
+                top: 50%;
+                left: 30%;
+                width: 100px;
+                height: 100px;
+                animation-delay: -5s;
+            }
+
+            .sakura-blossom:nth-child(3) {
+                top: 30%;
+                left: 60%;
+                width: 80px;
+                height: 80px;
+                animation-delay: -8s;
+            }
+
+        @@keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        @@media (max-width: 768px) {
+            .sakura-container {
+                flex-direction: column;
+            }
+
+            .sakura-right {
+                height: 40vh;
+            }
+
+            .sakura-content h1 {
+                font-size: 3rem;
+            }
+
+            .sakura-content h2 {
+                font-size: 2rem;
+            }
+
+            .sakura-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sakura-container">
+        <div class="sakura-left">
+            <div class="sakura-content">
+                <h1>桜の美しさ</h1>
+                <h2>The Beauty of Sakura</h2>
+                <p>Have you ever been to Japan? Let's visit Japan together and experience the blooming of sakuras.</p>
+                <div class="sakura-buttons">
+                    <a href="/Contact" class="btn btn-sakura">Contact</a>
+                    <a href="/About" class="btn btn-outline-sakura">Learn More</a>
+                    <form method="post" asp-page="/User">
+                        <button type="submit" asp-page-handler="Logout" class="btn btn-logout">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="sakura-right">
+            <div class="sakura-blossom"></div>
+            <div class="sakura-blossom"></div>
+            <div class="sakura-blossom"></div>
+        </div>
+    </div>
+</body>
+</html>

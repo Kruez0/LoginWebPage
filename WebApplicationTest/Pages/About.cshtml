@@ -1,0 +1,140 @@
+﻿@page
+@model WebApplicationTest.Pages.AboutModel
+
+@{
+    ViewData["Title"] = "About Sakura";
+    ViewData["HideNavbar"] = true;
+    ViewData["HideFooter"] = true;
+}
+
+<div class="sakura-learn-container">
+    <div class="sakura-learn-header">
+        <h1>桜の文化</h1>
+        <h2>The Culture of Sakura</h2>
+    </div>
+
+    <div class="sakura-learn-content">
+        <div class="sakura-card">
+            <div class="sakura-card-icon">🌸</div>
+            <h3>Historical Significance</h3>
+            <p>Sakura have been celebrated in Japan for centuries, symbolizing the ephemeral nature of life in Buddhist tradition. The practice of hanami (flower viewing) dates back to the Nara period (710-794).</p>
+        </div>
+
+        <div class="sakura-card">
+            <div class="sakura-card-icon">🗓️</div>
+            <h3>Seasonal Phenomenon</h3>
+            <p>The cherry blossoms typically bloom in spring (March-April) with the exact timing varying by region. The "sakura front" moves northward with warming temperatures.</p>
+        </div>
+
+        <div class="sakura-card">
+            <div class="sakura-card-icon">🎨</div>
+            <h3>Artistic Inspiration</h3>
+            <p>Sakura appear throughout Japanese art, literature, and music. They represent both beauty and mortality, a concept known as mono no aware - the pathos of things.</p>
+        </div>
+    </div>
+
+    <div class="sakura-back-home">
+        <a href="/Home" class="btn btn-sakura">Back to Home</a>
+    </div>
+</div>
+
+<style>
+    .sakura-learn-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        min-height: calc(100vh - 56px);
+        display: flex;
+        flex-direction: column;
+    }
+    body,html{
+        margin: 0;
+        padding: 0;
+        height:100%;
+        width:100%;
+    }
+    .sakura-learn-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 1rem;
+    }
+
+        .sakura-learn-header h1 {
+            font-size: 3.5rem;
+            color: #d23369;
+            margin-bottom: 0.5rem;
+        }
+
+        .sakura-learn-header h2 {
+            font-size: 1.8rem;
+            color: #5d5d5d;
+            font-weight: 400;
+        }
+
+    .sakura-learn-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .sakura-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+    }
+
+        .sakura-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .sakura-card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .sakura-card h3 {
+        color: #d23369;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .sakura-card p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .sakura-back-home {
+        text-align: center;
+        margin-top: auto;
+        padding: 2rem 0;
+    }
+
+    .btn-sakura {
+        background: #d23369;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+    }
+
+        .btn-sakura:hover {
+            background: #b52a5a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(210, 51, 105, 0.3);
+        }
+
+    @@media (max-width: 768px) {
+        .sakura-learn-header h1 {
+            font-size: 2.5rem;
+        }
+
+        .sakura-learn-header h2 {
+            font-size: 1.4rem;
+        }
+    }
+</style>
